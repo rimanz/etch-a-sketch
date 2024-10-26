@@ -2,7 +2,8 @@ const controls = document.querySelector('.controls');
 const btnNew = document.querySelector('#new');
 const btnClear = document.querySelector('#clear');
 const pad = document.querySelector('.pad');
-const color = 'black';
+const colorPicker = document.querySelector('#color');
+let color = colorPicker.value;
 
 function drawPad(size = 16) {
     // Get available height and width excluding paddings.
@@ -35,6 +36,11 @@ function clearPad() {
     });
 }
 
+function setColor() {
+    console.log(colorPicker.value);
+    color = colorPicker.value;
+}
+
 drawPad();
 pad.addEventListener('mouseover', draw);
 btnNew.addEventListener('click', () => {
@@ -53,3 +59,4 @@ btnNew.addEventListener('click', () => {
 });
 
 btnClear.addEventListener('click', clearPad);
+colorPicker.addEventListener('change', setColor);

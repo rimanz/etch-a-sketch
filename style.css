@@ -24,17 +24,24 @@ button {
     border-radius: 5px;
     font-weight: bold;
     padding: 5px 20px;
-    box-shadow: 1px 2px 5px silver, 0px -1px 2px silver;
+    box-shadow: 1px 2px 5px silver, -1px -1px 2px silver;
 }
 
 button:hover {
     background-color: whitesmoke;
-    box-shadow: 1px 2px 10px silver, 0px -1px 5px silver;
+    box-shadow: 2px 2px 10px silver, -2px -2px 5px silver;
 }
 
 button:active {
     /* background-color: whitesmoke; */
     box-shadow: 1px 2px 5px silver inset, 0px -1px 2px silver inset;
+}
+
+input[type='color'] {
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 5px;
 }
 
 .container {
