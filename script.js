@@ -1,9 +1,10 @@
 const controls = document.querySelector('.controls');
 const pad = document.querySelector('.pad');
+const color = 'black';
 
 function drawPad(size = 16) {
     // Get available height and width excluding paddings.
-    // Set the minimum as the pad size.
+    // Draws out a pad with the minimum size.
     const paddedSize = 40;
     const parentX = pad.parentElement.clientWidth - paddedSize;
     const parentY = pad.parentElement.clientHeight - paddedSize;
@@ -21,4 +22,9 @@ function drawPad(size = 16) {
     }
 }
 
+function draw(e){
+    if (e.buttons == 1) e.target.style.backgroundColor = color;
+}
+
 drawPad();
+pad.addEventListener('mouseover', e => draw(e));
