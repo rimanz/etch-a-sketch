@@ -1,5 +1,6 @@
 const controls = document.querySelector('.controls');
-const button = document.querySelector('button');
+const btnNew = document.querySelector('#new');
+const btnClear = document.querySelector('#clear');
 const pad = document.querySelector('.pad');
 const color = 'black';
 
@@ -23,13 +24,20 @@ function drawPad(size = 16) {
     }
 }
 
-function draw(e){
+function draw(e) {
     if (e.buttons == 1) e.target.style.backgroundColor = color;
+}
+
+function clearPad() {
+    console.log(pad.children);
+    Array.from(pad.children).forEach(child => {
+        child.style.backgroundColor = 'whitesmoke';
+    });
 }
 
 drawPad();
 pad.addEventListener('mouseover', e => draw(e));
-button.addEventListener('click', () => {
+btnNew.addEventListener('click', () => {
     // Get size of the pad from user.
     let size = prompt('Please enter pad size (10 ~ 100)');
     while (size < 10 || size > 100) {
@@ -43,3 +51,5 @@ button.addEventListener('click', () => {
     // Draw new pad with existing size.
     drawPad(size);
 })
+
+btnClear.addEventListener('click', clearPad);

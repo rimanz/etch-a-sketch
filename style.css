@@ -58,6 +58,10 @@ main {
 
 main .controls {
     margin-bottom: 20px;
+    display: flex;
+    flex-basis: 100px;
+    gap: 10px;
+    justify-content: space-evenly;
 }
 
 main .pad {
