@@ -80,13 +80,6 @@ main .pad {
     flex-wrap: wrap;
 }
 
-main .pad div {
-    background-color: whitesmoke;
-    border: 1px dotted silver;
-    width: 5px;
-    height: 5px;
-}
-
 main .pad div:hover {
     opacity: 50%;
 }

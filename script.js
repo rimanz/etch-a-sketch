@@ -1,3 +1,4 @@
+// Elements:
 const controls = document.querySelector('.controls');
 const btnNew = document.querySelector('#new');
 const btnClear = document.querySelector('#clear');
@@ -5,10 +6,11 @@ const pad = document.querySelector('.pad');
 const colorPicker = document.querySelector('#color');
 let color = colorPicker.value;
 
-function drawPad(size = 16) {
+// Function Declarations:
+function drawPad(numberOfPixels = 16) {
     // Get available height and width excluding paddings.
     // Draws out a pad with the minimum size.
-    const paddings = 40;
+    const paddings = 20 * 2;  // Parent has a padding of 20px on each side.
     const parentX = pad.parentElement.clientWidth - paddings;
     const parentY = pad.parentElement.clientHeight - paddings;
     const padSize = parentX < parentY ? parentX : parentY;
@@ -16,8 +18,8 @@ function drawPad(size = 16) {
     pad.style.height = padSize + 'px';
 
     // Calculate pixel dimension, then fill the pad with pixels.
-    const pixelDimension = 100 / size;
-    for (let i = 0; i < (size * size); i++) {
+    const pixelDimension = 100 / numberOfPixels;
+    for (let i = 0; i < (numberOfPixels * numberOfPixels); i++) {
         const pixel = document.createElement('div');
         pixel.style.width = pixelDimension + '%';
         pixel.style.height = pixelDimension + '%';
@@ -32,7 +34,7 @@ function draw(e) {
 function clearPad() {
     console.log(pad.children);
     Array.from(pad.children).forEach(child => {
-        child.style.backgroundColor = 'whitesmoke';
+        child.style.backgroundColor = 'white';
     });
 }
 
@@ -41,7 +43,7 @@ function setColor() {
     color = colorPicker.value;
 }
 
-drawPad();
+// Event Listeners:
 pad.addEventListener('mouseover', draw);
 btnNew.addEventListener('click', () => {
     // Get size of the pad from user.
@@ -54,9 +56,12 @@ btnNew.addEventListener('click', () => {
         pad.firstChild.remove();
     }
 
-    // Draw new pad with existing size.
+    // Draw new pad of user given size.
     drawPad(size);
 });
 
 btnClear.addEventListener('click', clearPad);
 colorPicker.addEventListener('change', setColor);
+
+// Draw the initial pad
+drawPad();
