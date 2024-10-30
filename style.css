@@ -80,6 +80,10 @@ main .pad {
     flex-wrap: wrap;
 }
 
+main .pad div {
+    border: 1px dotted lightgray;
+}
+
 main .pad div:hover {
     opacity: 50%;
 }
