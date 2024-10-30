@@ -38,9 +38,9 @@ function draw(e) {
 }
 
 function clearPad() {
-    console.log(pad.children);
     Array.from(pad.children).forEach(child => {
         child.style.backgroundColor = 'white';
+        child.style.opacity = ''; // If set it to 0, it effects the borders too.
     });
 }
 
