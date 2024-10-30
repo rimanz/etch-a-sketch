@@ -23,6 +23,7 @@ function drawPad(numberOfPixels = 16) {
         const pixel = document.createElement('div');
         pixel.style.width = pixelDimension + '%';
         pixel.style.height = pixelDimension + '%';
+        pixel.classList.add('pixel');
         pad.appendChild(pixel);
     }
 }

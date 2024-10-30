@@ -63,7 +63,7 @@ main {
     flex: 1;
 }
 
-main .controls {
+.controls {
     margin-bottom: 20px;
     display: flex;
     flex-basis: 100px;
@@ -71,7 +71,7 @@ main .controls {
     justify-content: space-evenly;
 }
 
-main .pad {
+.pad {
     background-color: white;
     margin: 0 auto;
     border-radius: 5px;
@@ -80,10 +80,10 @@ main .pad {
     flex-wrap: wrap;
 }
 
-main .pad div {
+.pixel {
     border: 1px dotted lightgray;
 }
 
-main .pad div:hover {
+.pixel:hover {
     opacity: 50%;
 }
