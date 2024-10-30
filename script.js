@@ -28,7 +28,13 @@ function drawPad(numberOfPixels = 16) {
 }
 
 function draw(e) {
-    if (e.buttons == 1) e.target.style.backgroundColor = color;
+    let opacity = Number(e.target.style.opacity);
+    if (e.buttons == 1) {
+        e.target.style.backgroundColor = color;
+        if (opacity < 1) {
+            e.target.style.opacity = opacity + 0.1;
+        }
+    }
 }
 
 function clearPad() {
