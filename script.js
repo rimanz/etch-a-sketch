@@ -12,11 +12,7 @@ function drawPad(numberOfPixels = 16) {
     // Draws out a pad with the minimum size.
     const paddings = 20 * 2;  // Parent has a padding of 20px on each side.
     const parentX = pad.parentElement.clientWidth - paddings;
-    const parentY = pad.parentElement.clientHeight 
-                    - controls.clientHeight
-                    - controls.style.marginBottom
-                    - paddings
-                    - 20;
+    const parentY = pad.parentElement.clientHeight - paddings;
     const padSize = parentX < parentY ? parentX : parentY;
     pad.style.width = padSize + 'px';
     pad.style.height = padSize + 'px';
