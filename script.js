@@ -10,9 +10,14 @@ let color = colorPicker.value;
 function drawPad(numberOfPixels = 16) {
     // Get available height and width excluding paddings.
     // Draws out a pad with the minimum size.
-    const paddings = 20 * 2;  // Parent has a padding of 20px on each side.
+    const paddings = 20 * 2;  // Paddings to be excluded to calculate size
+    const margins = 20  // Margins to be excluded to calculate height
     const parentX = pad.parentElement.clientWidth - paddings;
-    const parentY = pad.parentElement.clientHeight - paddings;
+    const parentY = pad.parentElement.clientHeight 
+                    - controls.clientHeight
+                    - controls.style.marginBottom
+                    - paddings
+                    - margins;
     const padSize = parentX < parentY ? parentX : parentY;
     pad.style.width = padSize + 'px';
     pad.style.height = padSize + 'px';
