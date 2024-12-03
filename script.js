@@ -60,7 +60,7 @@ pad.addEventListener('mouseover', draw);
 btnNew.addEventListener('click', () => {
     // Get size of the pad from user.
     let size = prompt('Please enter pad size (10 ~ 100)');
-    while (size < 10 || size > 100) {
+    while (size < 10 || size > 100 || isNaN(Number(size))) {
         size = prompt('Please Enter a valid pad size. The number must be between 10 and 100.');
     }
     // Get rid of existing pad.
